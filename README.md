@@ -30,7 +30,7 @@ Identify cost-saving opportunities through resource right-sizing.
 
 ## **Architecture Diagram**
 
-<img width="1536" height="700" alt="9f574742-2d5a-4dc1-9939-ca18ad9756d2" src="https://github.com/user-attachments/assets/d9d2ddc1-5b66-44b0-b3be-abf3549a6993" />
+<img width="1536" height="500" alt="9f574742-2d5a-4dc1-9939-ca18ad9756d2" src="https://github.com/user-attachments/assets/d9d2ddc1-5b66-44b0-b3be-abf3549a6993" />
 
 ## Before Optimization:
 
@@ -47,6 +47,13 @@ EC2 downsized to t3.micro (20 GB storage).
 Amazon RDS (db.t3.micro) now hosts the external database.
 
 Reduced monthly EC2 cost by ~50%.
+
+## Cost Estimation Results (AWS Pricing Calculator)
+Scenario	EC2 Type	EBS (GB)	RDS Type	Monthly Cost (USD)
+Before Optimization	t3.small	40	db.t3.micro	$35.60
+After Optimization	t3.micro	20	db.t3.micro	$25.18
+
+Monthly Savings: ≈ $10.42 (29% reduction)
 
 
  ## **Command and Steps**
@@ -89,22 +96,23 @@ aws ec2 describe-instances \
 
 ```
 
-## Cost Estimation Results (AWS Pricing Calculator)
-Scenario	EC2 Type	EBS (GB)	RDS Type	Monthly Cost (USD)
-Before Optimization	t3.small	40	db.t3.micro	$35.60
-After Optimization	t3.micro	20	db.t3.micro	$25.18
 
-Monthly Savings: ≈ $10.42 (29% reduction)
 
 ## **Screenshots**
 
-UninstallMariaDB.png	Showing successful removal of MariaDB.
+Showing successful removal of MariaDB.
+<img width="791" height="500" alt="Uninstall MariaDB" src="https://github.com/user-attachments/assets/bf200d44-e640-4234-b4d6-8ccaf8ea8389" />
 
-ModifyInstanceType.png	CLI confirmation of instance type change.
+CLI confirmation of instance type change.
+<img width="932" height="93" alt="Cli modify instance" src="https://github.com/user-attachments/assets/6e5dad26-a701-471f-b9a8-5caada166c71" />
+<img width="902" height="249" alt="instance type change to t3 micro" src="https://github.com/user-attachments/assets/d018ed74-805c-42fd-9801-7b9cacc70b31" />
 
-CafeWebAppAfter.png	Café app running successfully post-optimization.
+Café app running successfully post-optimization.
+<img width="1479" height="906" alt="cafe webapp after optimization" src="https://github.com/user-attachments/assets/2b126c5c-dbfa-4497-89d2-bf648ff4e962" />
 
 PricingBeforeAfter.png	AWS Calculator comparison showing cost reduction.
+<img width="1847" height="456" alt="pricing before optimization" src="https://github.com/user-attachments/assets/dd6f472d-07d0-4977-850a-0bae9fc2b46b" />
+<img width="1240" height="432" alt="pricing after optimizating" src="https://github.com/user-attachments/assets/9a278f62-f3d5-416a-a9f1-c8945ab82dba" />
 
 ## **Key Takeaways**
 
@@ -145,4 +153,4 @@ Calculated savings: $10.42/month, proving optimization effectiveness.
 
 Amarachi Emeziem
 
-# Tools Used: AWS CLI, EC2, RDS, EBS, Pricing Calculator, Linux SSH
+### Tools Used: AWS CLI, EC2, RDS, EBS, Pricing Calculator, Linux SSH
